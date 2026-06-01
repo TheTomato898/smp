@@ -57,20 +57,16 @@ body {
 
 
 .hero {
-  padding: 150px 0px;
+  padding: 100px 0px;
   color: var(--text);
   background: radial-gradient(125% 125% at 50% 10%, #fff0 40%, var(--primary-d) 100%), var(--bg);
   text-align: center;
 }
 
 
-.hero h1 {
-  margin: 0 auto;
-  padding-left: 20px;
-  color: transparent;
-  background: linear-gradient(135deg, var(--primary-l), var(--primary), var(--primary-d));
-  -webkit-background-clip: text;
-  width: 750px;
+.hero img {
+  margin: 0 auto 40px;
+  width: 50%;
   font-size: 145px;
   font-family: 'Outfit', sans-serif;
 }
