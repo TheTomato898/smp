@@ -76,8 +76,16 @@ body {
 }
 
 
+.hero strong {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+
 .hero p {
+  font-size: 18px;
   line-height: 30px;
+  opacity: 0.8;
 } 
 
 
@@ -87,17 +95,20 @@ body {
   color: var(--text);
   background: linear-gradient(135deg, var(--primary-l), var(--primary));
   width: 300px;
+  font-family: 'Outfit', sans-serif;
   font-size: 25px;
   font-weight: 600;
   text-decoration: none;
   border: none;
   border-radius: 16px;
   display: inline-block;
+  cursor: pointer;
   transition: all .25s ease;
 }
 .hero .button:hover {
   background: linear-gradient(135deg, var(--primary), var(--primary-d));
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 201, 209, 0.4);
 }
 
 /* radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%) */
