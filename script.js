@@ -1,5 +1,9 @@
+// Lucide Icons rendern
+
 lucide.createIcons();
 
+
+// Copy Button
 
 const copyButton = document.getElementById('copy-button');
 const copyIcon = document.getElementById('copy-icon');
@@ -29,6 +33,8 @@ copyButton.addEventListener("click", async () => {
   }, 2000);
 
 });
+
+//Fade-in Effect
 
 // Warten bis HTML geladen ist
 document.addEventListener('DOMContentLoaded', () => {
@@ -63,3 +69,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Server Status
+
+/*
+const serverIP = 'wrongnoah.de'; 
+
+async function checkServerStatus() {
+  try {
+    // kostenlose API von mcstatus.io
+    const response = await fetch(`https://api.mcstatus.io/v2/status/java/${serverIP}`);
+    const data = await response.json();
+
+    const statusElement = document.getElementById('server-status');
+    const playersElement = document.getElementById('player-count');
+    
+    if (data.online) {
+      statusElement.textContent = "Online";
+      statusElement.className = "online";
+      // Zeigt "aktuelle Spieler / maximale Spieler" an
+      playersElement.textContent = `${data.players.online} / ${data.players.max}`;
+    } else {
+      statusElement.textContent = "Offline";
+      statusElement.className = "offline";
+      playersElement.textContent = "0 / 0";
+    }
+  } 
+  catch (error) {
+    console.error("Fehler beim Abrufen des Server-Status:", error);
+    document.getElementById('server-status').textContent = "Fehler";
+  }
+}
+
+// Status beim Laden der Seite abrufen
+checkServerStatus();
+        
+// Status alle 60 Sekunden automatisch aktualisieren
+setInterval(checkServerStatus, 60000);
+*/

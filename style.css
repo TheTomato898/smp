@@ -1,49 +1,109 @@
+/*---Configuration---*/
+
+/* Template */
+  /*
+    margin
+    padding
+    color
+    bg-color
+    size
+    text
+  */
+
+/* Globale Variablen */
+
+
 :root {
-    --blue1: #dbeafe;
-    --blue2: #bedbff;
-    --blue4: #54a2ff;
-    --blue5: #3080ff;
-    --blue5l: #3080ff3d;
-    --gray1: #212121;
-    --gray2: #e5e7eb;
-    --gray3: #d1d5dc;
-    --gray4: #99a1af;
-    --gray5: #6a7282;
-    --gray6: #4a5565;
+  
+  /* Color palette */
+  --primary: #17c9d1;
+  --secondary: #2eeaf0;
+
+  /* variations */
+  --primary-l: #4deff3;
+  --primary-d: #0e7e84;
+
+  --secondary-l: #8ff8fa;
+  --secondary-d: #1abdc4;
+
+  /* UI */
+  --bg: #061014;
+  --surface: #0a1c22;
+  --card: #102a31;
+  --border: #174650;
+
+  /* Text */
+  --text: #f5ffff;
+  --text-l: #8fb9bd;
 }
 
+
+
+/* Browser Margin Reset */
 * {
-    font-family: "Public Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-    font-optical-sizing: auto;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-image: url('SMP_1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 
-h1 {
-    font-family: "Bowlby One", sans-serif;
-    font-size: 150px;
-    /*background-image: linear-gradient(to top, var(--blue5), var(--blue2));
-    -webkit-background-clip: text;
-    color: transparent;*/
-    color: var(--blue4);
-    text-shadow: 0 10px 0 var(--blue2), 1px 30px 80px #00000040;
+
+/*---Dark Mode Desktop---*/
+
+/* hero */
+
+
+.hero {
+  padding: 150px 0px;
+  color: var(--text);
+  background: radial-gradient(125% 125% at 50% 10%, #fff0 40%, var(--primary-d) 100%), var(--bg);
+  text-align: center;
 }
 
-.content {
-    width: max-content;
-    max-width: 100%;
-    margin: 0 auto;
+
+.hero h1 {
+  margin: 0 auto;
+  padding-left: 20px;
+  color: transparent;
+  background: linear-gradient(135deg, var(--primary-l), var(--primary), var(--primary-d));
+  -webkit-background-clip: text;
+  width: 750px;
+  font-size: 145px;
+  font-family: 'Outfit', sans-serif;
 }
 
-.section {
-    padding-top: 400px;
-    padding-bottom: 200px;
+
+.hero .description {
+  margin: 0px auto;
+  width: 650px;
 }
+
+
+.hero p {
+  line-height: 30px;
+} 
+
+
+.hero .button {
+  margin: 75px 10px;
+  padding: 4px 15px;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--primary-l), var(--primary));
+  width: 300px;
+  font-size: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 16px;
+  display: inline-block;
+  transition: all .25s ease;
+}
+.hero .button:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-d));
+  transform: translateY(-2px);
+}
+
+/* radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%) */
