@@ -59,19 +59,17 @@ body {
 .hero {
   padding: 100px 0px;
   color: var(--text);
-  background: radial-gradient(125% 125% at 50% 10%, #fff0 40%, var(--primary-d) 100%), var(--bg);
+  background: var(--bg);
   text-align: center;
 }
 
 
 .hero h1 {
   margin: 200px auto 0;
-  color: transparent;
-  background: var(--text);
-  -webkit-background-clip: text;
+  color: var(--text);
   width: 750px;
   font-size: 145px;
-  font-weight: 750;
+  font-weight: 700;
   font-family: 'Nunito', sans-serif;
 }
 
@@ -83,8 +81,9 @@ body {
 
 
 .hero strong {
-  color: var(--secondary);
+  color: var(--primary-l);
   font-weight: 700;
+  opacity: 1;
 }
 
 
