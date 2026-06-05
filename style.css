@@ -90,7 +90,7 @@ body {
 .hero p {
   font-size: 20px;
   line-height: 30px;
-  opacity: 0.8;
+  color: rgb(from var(--text) r g b / 0.8);
 } 
 
 
@@ -110,13 +110,18 @@ body {
   cursor: pointer;
   transition: all .25s ease;
 }
-.hero .button .secondary {
-  background: var(--card);
-}
 .hero .button:hover {
   background: linear-gradient(135deg, var(--primary), var(--primary-d));
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(23, 201, 209, 0.4);
+  box-shadow: 0 8px 20px rgb(from var(--primary-d) r g b / 0.4);
+}
+
+
+.hero .button.secondary {
+  background: linear-gradient(135deg, var(--card), var(--border));
+}
+.hero .button.secondary:hover {
+  background: var(--border);
 }
 
 /* radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%) */
