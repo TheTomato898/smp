@@ -57,7 +57,7 @@ body {
 
 
 .hero {
-  padding: 100px 0px;
+  padding: 15% 0;
   color: var(--text);
   background: var(--bg);
   text-align: center;
@@ -65,7 +65,7 @@ body {
 
 
 .hero h1 {
-  margin: 200px auto 0;
+  margin: 0 auto;
   color: var(--text);
   width: 750px;
   font-size: 145px;
@@ -80,7 +80,7 @@ body {
 }
 
 
-.hero strong {
+.hero p strong {
   color: var(--primary-l);
   font-weight: 700;
   opacity: 1;
@@ -109,6 +109,9 @@ body {
   display: inline-block;
   cursor: pointer;
   transition: all .25s ease;
+}
+.hero .button .secondary {
+  background: var(--card);
 }
 .hero .button:hover {
   background: linear-gradient(135deg, var(--primary), var(--primary-d));
