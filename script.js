@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Server Status
 
-/*
+
 const serverIP = 'wrongnoah.de'; 
 
 async function checkServerStatus() {
@@ -106,4 +106,3 @@ checkServerStatus();
         
 // Status alle 60 Sekunden automatisch aktualisieren
 setInterval(checkServerStatus, 60000);
-*/

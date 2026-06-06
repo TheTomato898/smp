@@ -53,18 +53,59 @@ body {
 
 /*---Dark Mode Desktop---*/
 
+/* navbar */
+
+
+nav ul li img {
+  width: 70px;
+  text-align: center;
+  display: inline-block;
+}
+
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+
+nav ul li a {
+  margin:  0 !important;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
 /* hero */
 
 
 .hero {
-  padding: 15% 0;
+  padding: 10% 0;
   color: var(--text);
   background: var(--bg);
   text-align: center;
 }
 
 
-.hero h1 {
+.hero .status-box {
+  margin: 0 auto;
+  padding: 4px 15px;
+  color: var(--text-l);
+  background-color: var(--surface);
+  width: max-content;
+  font-size: 18px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+
+.hero .status-box p {
+  display: inline;
+} 
+
+
+h1 {
   margin: 0 auto;
   color: var(--text);
   width: 750px;
@@ -80,21 +121,21 @@ body {
 }
 
 
-.hero p strong {
+p strong {
   color: var(--primary-l);
   font-weight: 700;
   opacity: 1;
 }
 
 
-.hero p {
+p {
   font-size: 20px;
   line-height: 30px;
   color: rgb(from var(--text) r g b / 0.8);
 } 
 
 
-.hero .button {
+.button {
   margin: 75px 10px;
   padding: 8px 30px;
   color: var(--text);
@@ -104,24 +145,24 @@ body {
   font-size: 25px;
   font-weight: 600;
   text-decoration: none;
-  border: none;
+  border: 1px solid var(--border);
   border-radius: 24px;
   display: inline-block;
   cursor: pointer;
   transition: all .25s ease;
 }
-.hero .button:hover {
+.button:hover {
   background: linear-gradient(135deg, var(--primary), var(--primary-d));
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgb(from var(--primary-d) r g b / 0.4);
+  box-shadow: 0 8px 20px rgb(from var(--primary) r g b / 0.4);
 }
 
 
-.hero .button.secondary {
-  background: linear-gradient(135deg, var(--card), var(--border));
+.button.secondary {
+  background: linear-gradient(135deg, var(--card), var(--surface));
 }
-.hero .button.secondary:hover {
-  background: var(--border);
+.button.secondary:hover {
+  background: linear-gradient(135deg, var(--border), var(--card));
 }
 
 /* radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%) */
