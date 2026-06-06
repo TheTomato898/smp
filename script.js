@@ -83,21 +83,23 @@ async function checkServerStatus() {
 
     const statusElement = document.getElementById('server-status');
     const playersElement = document.getElementById('player-count');
+    const dot = document.getElementById('dot');
     
     if (data.online) {
       statusElement.textContent = "Online";
-      statusElement.className = "online";
+      dot.className = "online";
       // Zeigt "aktuelle Spieler / maximale Spieler" an
       playersElement.textContent = `${data.players.online} / ${data.players.max}`;
     } else {
       statusElement.textContent = "Offline";
-      statusElement.className = "offline";
+      dot.className = "offline";
       playersElement.textContent = "0 / 0";
     }
   } 
   catch (error) {
     console.error("Fehler beim Abrufen des Server-Status:", error);
     document.getElementById('server-status').textContent = "Fehler";
+    document.getElementById('dot').className = "offline";
   }
 }
 
@@ -106,3 +108,13 @@ checkServerStatus();
         
 // Status alle 60 Sekunden automatisch aktualisieren
 setInterval(checkServerStatus, 60000);
+
+
+// Carousel Initialisierung mit Optionen für die 3D-Ansicht
+$(document).ready(function() {
+  $('.carousel').carousel({
+    padding: 40,      /* Abstand zwischen den Karten */
+    shift: 20,        /* Verschiebung nach hinten im 3D-Raum */
+    dist: -80         /* Tiefe des 3D-Effekts */
+  });
+});
