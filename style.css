@@ -110,6 +110,16 @@ nav ul li a {
 }
 
 
+#dot {
+  margin: 3px 0;
+  background-color: var(--text-l);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
 .hero .status-box p {
   display: inline;
 } 
