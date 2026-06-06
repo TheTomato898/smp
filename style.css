@@ -118,8 +118,11 @@ nav ul li a {
   border-radius: 50%;
   display: inline-block;
 }
-.online {
-  background-color: var(--primary);
+#dot.online {
+  background-color: var(--primary-l);
+}
+#dot.offline {
+  background-color: var(--text-l);
 }
 
 

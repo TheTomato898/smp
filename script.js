@@ -12,7 +12,7 @@ const copyText = document.getElementById('copy-text');
 copyButton.addEventListener("click", async () => {
 
   // Text in Zwischenablage kopieren
-  await navigator.clipboard.writeText('wrongnoah.de');
+  await navigator.clipboard.writeText('tuffsmp.de');
 
   // Text ändern
   copyText.textContent = "IP kopiert";
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Server Status
 
 
-const serverIP = 'wrongnoah.de'; 
+const serverIP = 'tuffsmp.de'; 
 
 async function checkServerStatus() {
   try {
