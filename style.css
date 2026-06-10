@@ -220,28 +220,33 @@ h2 {
 
 /* carousel */
 
-
-/* Die Kern-Regeln von Materialize, damit die Karten nebeneinander fliegen */
 .carousel {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 450px;
-  perspective: 600px;
-  transform-style: preserve-3d;
+  height: 500px; /* Leicht erhöht, damit Schatten nicht abgeschnitten werden */
+  perspective: 800px; /* Erzeugt den 3D-Raum */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel .carousel-item {
-  visibility: hidden;
   width: 320px;
   height: auto;
   position: absolute;
-  top: 0;
-  left: 0;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  transition: opacity 0.3s ease, z-index 0.3s ease, transform 0s linear;
   cursor: grab;
   
-  /* Dein edles Kartendesign */
-  background-color: var(--surface);
+  /* WICHTIG GEGEN DURCHSCHIMMERN: */
+  background-color: #0a1c22; /* Erzwingt dein massives var(--surface) */
+  backface-visibility: hidden; /* Verhindert 3D-Fragmente-Fehler */
+  transform-style: flat; /* Zwingt den Inhalt der Karte, auf ihrer eigenen Ebene zu bleiben */
+
+  /* Dein restliches Design */
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 30px 20px;
@@ -251,7 +256,9 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  user-select: none; 
 }
+
 
 .carousel .carousel-item:active {
   cursor: grabbing;
@@ -268,6 +275,7 @@ h2 {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  pointer-events: none; /* Wichtig für sauberes Swipen */
 }
 
 .carousel .carousel-item .avatar-box svg {
@@ -281,10 +289,12 @@ h2 {
   font-size: 28px;
   font-weight: 700;
   margin: 0 0 5px 0; 
+  pointer-events: none;
 }
 
 .carousel .carousel-item p {
   color: var(--text-l);
   font-size: 16px;
   margin: 0;
+  pointer-events: none;
 }
