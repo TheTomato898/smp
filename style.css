@@ -43,6 +43,7 @@
 * {
   margin: 0;
   font-family: 'Inter', sans-serif;
+  text-wrap: balance;
 }
 
 body {
@@ -196,7 +197,7 @@ p {
 
 /* section */
 
-.section {
+.s1 {
   background: var(--bg);
   padding: 50px 0 150px 0;
   overflow: hidden;
@@ -213,7 +214,7 @@ h2 {
 }
 
 
-.section .description {
+.s1 .description {
   margin: 0 auto;
   width: max-content;
 }
