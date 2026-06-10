@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const items = Array.from(carouselContainer.querySelectorAll('.carousel-item'));
   const totalItems = items.length;
-  
+
   // NUTZER-EINSTELLUNGEN (Deine Original-Werte)
-  const padding = 40;   
-  const shift = 20;     
-  const dist = -80;     
+  const padding = 40;
+  const shift = 20;
+  const dist = -80;
 
   // Mathematischer Index für flüssige Übergänge
   let targetIndex = 0;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex += (targetIndex - currentIndex) * 0.12;
 
     // KORREKTUR FÜR UNENDLICHEN LOOP:
-    // Sobald wir eine volle Runde gedreht haben, setzen wir targetIndex und currentIndex 
+    // Sobald wir eine volle Runde gedreht haben, setzen wir targetIndex und currentIndex
     // unbemerkt zurück, damit die Zahlen nicht ins Unendliche steigen.
     if (!isDragging && Math.abs(targetIndex - currentIndex) < 0.001) {
       currentIndex = mod(currentIndex, totalItems);
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     items.forEach((item, index) => {
       // Abstand basierend auf dem flüssigen, normalisierten currentIndex berechnen
       let offset = index - mod(currentIndex, totalItems);
-      
+
       // Perfekte Loop-Berechnung innerhalb der Array-Größe
       if (offset > totalItems / 2) offset -= totalItems;
       if (offset < -totalItems / 2) offset += totalItems;
@@ -60,13 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (offset !== 0) {
         scale = Math.pow(0.85, absOffset);
         // Wert auf 220 gelassen für deine perfekte Auffächerung
-        translateX = (offset * 220) + (Math.sign(offset) * padding);
+        translateX = offset * 220 + Math.sign(offset) * padding;
         translateZ = dist * absOffset;
         opacity = Math.pow(0.6, absOffset);
       }
 
       const zIndex = Math.round(100 - absOffset);
-      
+
       // Sichtbarkeit regeln: Genau 2 links und 2 rechts erlauben
       const visibility = absOffset > 2.2 ? 'hidden' : 'visible';
       if (absOffset > 2.2) opacity = 0;
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let diff = index - mod(targetIndex, totalItems);
         if (diff > totalItems / 2) diff -= totalItems;
         if (diff < -totalItems / 2) diff += totalItems;
-        
+
         targetIndex += diff;
       };
     });
@@ -109,15 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const nowX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
     const nowTime = performance.now();
-    
+
     const deltaX = nowX - currentX;
     const deltaTime = nowTime - startTime;
 
     if (deltaTime > 0) {
-      velocity = deltaX / deltaTime; 
+      velocity = deltaX / deltaTime;
     }
 
-    // FEINGEFÜHL: Erhöht auf 400. Je höher dieser Wert, desto mehr Widerstand 
+    // FEINGEFÜHL: Erhöht auf 400. Je höher dieser Wert, desto mehr Widerstand
     // spürt man beim Ziehen (die Karten rutschen nicht mehr so hektisch weg).
     targetIndex -= deltaX / 400;
 
@@ -130,11 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
     isDragging = false;
 
     // WENIGER SCHNELL / KONTROLLIERTER SCHWUNG:
-    // Der Multiplikator wurde von 2.5 auf 1.2 gesenkt. 
+    // Der Multiplikator wurde von 2.5 auf 1.2 gesenkt.
     // Jetzt rollt das Karussell bei schnellem Wischen maximal 1-2 Karten weiter, statt durchzudrehen.
     let inertia = 0;
     if (Math.abs(velocity) > 0.2) {
-      inertia = velocity * 1.2; 
+      inertia = velocity * 1.2;
     }
 
     // Ziel exakt einrasten lassen
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event-Listener an das Fenster und den Container binden
   carouselContainer.addEventListener('mousedown', handleStart);
-  window.addEventListener('mousemove', handleMove); 
+  window.addEventListener('mousemove', handleMove);
   window.addEventListener('mouseup', handleEnd);
 
   carouselContainer.addEventListener('touchstart', handleStart, { passive: true });

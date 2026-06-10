@@ -2,20 +2,18 @@
 
 lucide.createIcons();
 
-
 // Copy Button
 
 const copyButton = document.getElementById('copy-button');
 const copyIcon = document.getElementById('copy-icon');
 const copyText = document.getElementById('copy-text');
 
-copyButton.addEventListener("click", async () => {
-
+copyButton.addEventListener('click', async () => {
   // Text in Zwischenablage kopieren
   await navigator.clipboard.writeText('tuffsmp.de');
 
   // Text ändern
-  copyText.textContent = "IP kopiert";
+  copyText.textContent = 'IP kopiert';
 
   // Icon ändern
   copyIcon.innerHTML = '<i data-lucide="check"></i>';
@@ -25,55 +23,50 @@ copyButton.addEventListener("click", async () => {
 
   // Nach 2 Sekunden zurücksetzen
   setTimeout(() => {
-    copyText.textContent = "Copy Server IP";
+    copyText.textContent = 'Copy Server IP';
 
-    copyIcon.innerHTML = '<i data-lucide="copy"></i>'
+    copyIcon.innerHTML = '<i data-lucide="copy"></i>';
 
     lucide.createIcons();
   }, 2000);
-
 });
 
 //Fade-in Effect
 
 // Warten bis HTML geladen ist
 document.addEventListener('DOMContentLoaded', () => {
-
   // Alle Elemente auswählen
   const elements = document.querySelectorAll('.fade-in');
 
   // Observer erstellen
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Wenn sichtbar
+        if (entry.isIntersecting) {
+          // Klasse hinzufügen
+          entry.target.classList.add('visible');
 
-    entries.forEach(entry => {
-
-      // Wenn sichtbar
-      if (entry.isIntersecting) {
-
-        // Klasse hinzufügen
-        entry.target.classList.add('visible');
-
-        // Optional:
-        // Nur einmal animieren
-        observer.unobserve(entry.target);
-      }
-    });
-
-  }, {
-    threshold: 0.1
-  });
+          // Optional:
+          // Nur einmal animieren
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
 
   // Elemente beobachten
-  elements.forEach(el => {
+  elements.forEach((el) => {
     observer.observe(el);
   });
-
 });
 
 // Server Status
 
-
-const serverIP = 'tuffsmp.de'; 
+const serverIP = 'tuffsmp.de';
 
 async function checkServerStatus() {
   try {
@@ -84,27 +77,26 @@ async function checkServerStatus() {
     const statusElement = document.getElementById('server-status');
     const playersElement = document.getElementById('player-count');
     const dot = document.getElementById('dot');
-    
+
     if (data.online) {
-      statusElement.textContent = "Online";
-      dot.className = "online";
+      statusElement.textContent = 'Online';
+      dot.className = 'online';
       // Zeigt "aktuelle Spieler / maximale Spieler" an
       playersElement.textContent = `${data.players.online} / ${data.players.max}`;
     } else {
-      statusElement.textContent = "Offline";
-      dot.className = "offline";
-      playersElement.textContent = "0 / 0";
+      statusElement.textContent = 'Offline';
+      dot.className = 'offline';
+      playersElement.textContent = '0 / 0';
     }
-  } 
-  catch (error) {
-    console.error("Fehler beim Abrufen des Server-Status:", error);
-    document.getElementById('server-status').textContent = "Fehler";
-    document.getElementById('dot').className = "offline";
+  } catch (error) {
+    console.error('Fehler beim Abrufen des Server-Status:', error);
+    document.getElementById('server-status').textContent = 'Fehler';
+    document.getElementById('dot').className = 'offline';
   }
 }
 
 // Status beim Laden der Seite abrufen
 checkServerStatus();
-        
+
 // Status alle 60 Sekunden automatisch aktualisieren
 setInterval(checkServerStatus, 60000);

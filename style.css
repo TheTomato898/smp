@@ -1,7 +1,7 @@
 /*---Configuration---*/
 
 /* Template */
-  /*
+/*
     margin
     padding
     color
@@ -12,9 +12,7 @@
 
 /* Globale Variablen */
 
-
 :root {
-  
   /* Color palette */
   --primary: #17c9d1;
   --secondary: #2eeaf0;
@@ -37,8 +35,6 @@
   --text-l: #8fb9bd;
 }
 
-
-
 /* Browser Margin Reset */
 * {
   margin: 0;
@@ -50,12 +46,9 @@ body {
   overflow-x: hidden;
 }
 
-
-
 /*---Dark Mode Desktop---*/
 
 /* navbar */
-
 
 nav ul li img {
   width: 70px;
@@ -63,21 +56,18 @@ nav ul li img {
   display: inline-block;
 }
 
-
 nav ul {
   margin-bottom: -50px;
   display: flex;
   list-style-type: none;
 }
 
-
 .nav-right {
   margin-left: auto;
 }
 
-
 nav ul li a {
-  margin:  0 !important;
+  margin: 0 !important;
   padding: 4px 15px !important;
   width: 250px !important;
   font-size: 20px !important;
@@ -87,9 +77,7 @@ nav ul li a {
   display: inline-block;
 }
 
-
 /* hero */
-
 
 .hero {
   padding: 10% 0;
@@ -97,7 +85,6 @@ nav ul li a {
   background: var(--bg);
   text-align: center;
 }
-
 
 .hero .status-box {
   margin: 0 auto;
@@ -109,7 +96,6 @@ nav ul li a {
   border: 1px solid var(--border);
   border-radius: 24px;
 }
-
 
 #dot {
   margin: 3px 0;
@@ -126,11 +112,9 @@ nav ul li a {
   background-color: var(--text-l);
 }
 
-
 .hero .status-box p {
   display: inline;
-} 
-
+}
 
 h1 {
   margin: 0 auto;
@@ -141,12 +125,10 @@ h1 {
   font-family: 'Nunito', sans-serif;
 }
 
-
 .hero .description {
   margin: 0px auto;
   width: 650px;
 }
-
 
 p strong {
   color: var(--primary-l);
@@ -154,13 +136,11 @@ p strong {
   opacity: 1;
 }
 
-
 p {
   font-size: 20px;
   line-height: 30px;
   color: rgb(from var(--text) r g b / 0.8);
-} 
-
+}
 
 .button {
   margin: 75px 10px;
@@ -176,14 +156,13 @@ p {
   border-radius: 24px;
   display: inline-block;
   cursor: pointer;
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 .button:hover {
   background: linear-gradient(135deg, var(--primary), var(--primary-d));
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgb(from var(--primary) r g b / 0.4);
 }
-
 
 .button.secondary {
   background: linear-gradient(135deg, var(--card), var(--surface));
@@ -194,7 +173,6 @@ p {
 
 /* radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%) */
 
-
 /* section */
 
 .s1 {
@@ -202,7 +180,6 @@ p {
   padding: 50px 0 150px 0;
   overflow: hidden;
 }
-
 
 h2 {
   margin: 0 auto;
@@ -212,7 +189,6 @@ h2 {
   font-weight: 600;
   font-family: 'Nunito', sans-serif;
 }
-
 
 .s1 .description {
   margin: 0 auto;
@@ -239,9 +215,12 @@ h2 {
   left: 50%;
   top: 50%;
   transform-origin: center center;
-  transition: opacity 0.3s ease, z-index 0.3s ease, transform 0s linear;
+  transition:
+    opacity 0.3s ease,
+    z-index 0.3s ease,
+    transform 0s linear;
   cursor: grab;
-  
+
   /* WICHTIG GEGEN DURCHSCHIMMERN: */
   background-color: #0a1c22; /* Erzwingt dein massives var(--surface) */
   backface-visibility: hidden; /* Verhindert 3D-Fragmente-Fehler */
@@ -252,14 +231,13 @@ h2 {
   border-radius: 16px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  user-select: none; 
+  user-select: none;
 }
-
 
 .carousel .carousel-item:active {
   cursor: grabbing;
@@ -289,7 +267,7 @@ h2 {
   font-family: 'Nunito', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  margin: 0 0 5px 0; 
+  margin: 0 0 5px 0;
   pointer-events: none;
 }
 
