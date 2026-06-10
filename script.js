@@ -108,13 +108,3 @@ checkServerStatus();
         
 // Status alle 60 Sekunden automatisch aktualisieren
 setInterval(checkServerStatus, 60000);
-
-
-// Carousel Initialisierung mit Optionen für die 3D-Ansicht
-$(document).ready(function() {
-  $('.carousel').carousel({
-    padding: 40,      /* Abstand zwischen den Karten */
-    shift: 20,        /* Verschiebung nach hinten im 3D-Raum */
-    dist: -80         /* Tiefe des 3D-Effekts */
-  });
-});
