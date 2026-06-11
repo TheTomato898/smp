@@ -1,15 +1,5 @@
 /*---Configuration---*/
 
-/* Template */
-/*
-    margin
-    padding
-    color
-    bg-color
-    size
-    text
-  */
-
 /* Globale Variablen */
 
 :root {
@@ -38,7 +28,7 @@
 /* Browser Margin Reset */
 * {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Geist', sans-serif;
   text-wrap: balance;
 }
 
@@ -120,9 +110,10 @@ h1 {
   margin: 0 auto;
   color: var(--text);
   width: 750px;
-  font-size: 145px;
+  font-size: 128px;
+  line-height: 128px;
   font-weight: 700;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'M PLUS 1', sans-serif;
 }
 
 .hero .description {
@@ -137,9 +128,15 @@ p strong {
 }
 
 p {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 24px;
+  line-height: 36px;
   color: rgb(from var(--text) r g b / 0.8);
+}
+
+svg {
+  transform: translateY(4px);
+  width: 24px;
+  height: 24px;
 }
 
 .button {
@@ -149,7 +146,8 @@ p {
   background: linear-gradient(135deg, var(--secondary), var(--primary));
   width: 300px;
   font-family: 'Outfit', sans-serif;
-  font-size: 25px;
+  font-size: 24px;
+  letter-spacing: 1px;
   font-weight: 600;
   text-decoration: none;
   border: 1px solid var(--border);
